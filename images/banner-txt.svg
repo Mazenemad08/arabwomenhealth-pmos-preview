@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PMOS rebrand banner logotype (EN). Placeholder typographic treatment;
+     replace with branded artwork if pixel fidelity is required. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 210" width="380" height="191" role="img" aria-label="From PCOS to PMOS">
+  <g font-family="'Jost','Segoe UI',Arial,Helvetica,sans-serif" text-anchor="middle" fill="#ffffff">
+    <text x="230" y="66" font-size="30" font-weight="400" letter-spacing="1">From
+      <tspan font-size="46" font-weight="800" letter-spacing="2">PCOS</tspan>
+    </text>
+    <g stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.9">
+      <line x1="230" y1="90" x2="230" y2="118"/>
+      <polyline points="220,108 230,120 240,108" fill="none"/>
+    </g>
+    <text x="230" y="176" font-size="30" font-weight="400" letter-spacing="1">to
+      <tspan font-size="54" font-weight="800" letter-spacing="2" fill="#fa6a2e">PMOS</tspan>
+    </text>
+  </g>
+</svg>

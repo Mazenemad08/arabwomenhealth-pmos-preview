@@ -1,0 +1,147 @@
+/* ==========================================================================
+   PMOS rebrand & new features — arabwomenhealth.com
+   Self-contained styles for: banner tagline, "what is PMOS" links,
+   PCOS-vs-PMOS comparison, important note, body map, early detection,
+   symptom quiz, and multidisciplinary care.
+   Brand tokens: primary #5a296f / #532764, accent #fa6a2e.
+   RTL is handled via [dir="rtl"] overrides (Arabic pages set dir="rtl").
+   ========================================================================== */
+
+:root {
+  --pmos-primary: #5a296f;
+  --pmos-primary-2: #532764;
+  --pmos-accent: #fa6a2e;
+  --pmos-green: #2e9e5b;
+  --pmos-yellow: #e0a100;
+  --pmos-red: #d64550;
+  --pmos-ink: #3a3a3a;
+  --pmos-soft: #f6f2f9;
+}
+
+/* ---------- Banner tagline (below the SVG logotype) ---------------------- */
+.pmos-tagline {
+  max-width: 620px;
+  margin: 12px auto 0;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.6;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, .35);
+}
+.pmos-tagline .pmos-tagline-lead {
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+.pmos-tagline .pmos-tagline-note { opacity: .9; font-size: 15px; }
+@media (max-width: 767px) { .pmos-tagline { font-size: 15px; } }
+
+/* ---------- Inline clickable topic links in body copy ------------------- */
+.pmos-inline-link {
+  color: var(--pmos-primary);
+  font-weight: bold;
+  border-bottom: 1px dotted var(--pmos-primary);
+  text-decoration: none;
+}
+.pmos-inline-link:hover { color: var(--pmos-accent); border-bottom-color: var(--pmos-accent); }
+
+/* ---------- Generic PMOS section helpers -------------------------------- */
+.pmos-section { padding: 40px 0; }
+.pmos-h { color: var(--pmos-primary-2); font-weight: bold; margin-bottom: 14px; }
+.pmos-lead { font-size: 17px; line-height: 1.7; color: var(--pmos-ink); }
+.pmos-check { list-style: none; padding: 0; margin: 14px 0; }
+.pmos-check li { position: relative; padding: 6px 30px; line-height: 1.6; }
+.pmos-check li::before {
+  content: "\2713"; /* check mark */
+  position: absolute; left: 0; top: 6px;
+  color: var(--pmos-green); font-weight: bold;
+}
+[dir="rtl"] .pmos-check li { padding: 6px 30px 6px 0; }
+[dir="rtl"] .pmos-check li::before { left: auto; right: 0; }
+
+/* ---------- PCOS vs PMOS comparison ------------------------------------- */
+.pmos-compare { display: flex; flex-wrap: wrap; gap: 20px; margin: 20px 0; }
+.pmos-compare .pmos-col {
+  flex: 1 1 260px; background: var(--pmos-soft);
+  border: 1px solid #e6def0; border-radius: 10px; padding: 22px 24px;
+}
+.pmos-compare .pmos-col h4 { color: var(--pmos-primary); font-weight: bold; margin-bottom: 8px; }
+.pmos-compare .pmos-col.is-pmos { border-color: var(--pmos-primary); box-shadow: 0 4px 18px rgba(90, 41, 111, .12); }
+
+/* ---------- Important note box ------------------------------------------ */
+.pmos-note {
+  background: #fff7ef; border-left: 4px solid var(--pmos-accent);
+  border-radius: 8px; padding: 16px 20px; margin: 20px 0; line-height: 1.7;
+}
+[dir="rtl"] .pmos-note { border-left: 0; border-right: 4px solid var(--pmos-accent); }
+.pmos-note strong { color: var(--pmos-accent); }
+
+/* ---------- Interactive body map ---------------------------------------- */
+.pmos-bodymap-wrap { display: flex; flex-wrap: wrap; gap: 28px; align-items: center; }
+.pmos-bodymap { flex: 0 0 300px; max-width: 300px; margin: 0 auto; }
+.pmos-bodymap svg { width: 100%; height: auto; }
+.pmos-hotspot { cursor: pointer; transition: fill .2s, transform .2s; outline: none; }
+.pmos-hotspot:hover, .pmos-hotspot:focus, .pmos-hotspot.is-active { fill: var(--pmos-accent); }
+.pmos-hotspot-dot {
+  fill: var(--pmos-primary); stroke: #fff; stroke-width: 2; cursor: pointer;
+  transition: fill .2s, r .2s;
+}
+.pmos-hotspot-dot:hover, .pmos-hotspot-dot:focus, .pmos-hotspot-dot.is-active { fill: var(--pmos-accent); }
+.pmos-bodymap-info {
+  flex: 1 1 320px; background: var(--pmos-soft);
+  border: 1px solid #e6def0; border-radius: 12px; padding: 24px 28px; min-height: 180px;
+}
+.pmos-bodymap-info h4 { color: var(--pmos-primary); font-weight: bold; margin-bottom: 8px; }
+.pmos-bodymap-chips { margin-top: 18px; }
+.pmos-bodymap-chips button {
+  display: inline-block; margin: 4px; padding: 7px 14px; border: 1px solid var(--pmos-primary);
+  background: #fff; color: var(--pmos-primary); border-radius: 20px; font-size: 13px; cursor: pointer;
+}
+.pmos-bodymap-chips button:hover,
+.pmos-bodymap-chips button.is-active { background: var(--pmos-primary); color: #fff; }
+
+/* ---------- Symptom quiz ------------------------------------------------- */
+.pmos-quiz { background: #fff; border-radius: 12px; }
+.pmos-quiz .pmos-quiz-cat { margin-bottom: 20px; }
+.pmos-quiz .pmos-quiz-cat > h4 {
+  color: var(--pmos-primary); font-weight: bold; font-size: 17px;
+  border-bottom: 2px solid var(--pmos-soft); padding-bottom: 6px; margin-bottom: 10px;
+}
+.pmos-quiz label {
+  display: flex; align-items: flex-start; gap: 10px; padding: 8px 4px;
+  cursor: pointer; line-height: 1.5;
+}
+.pmos-quiz label input { margin-top: 4px; transform: scale(1.25); accent-color: var(--pmos-primary); }
+.pmos-quiz-actions { margin: 18px 0; }
+.pmos-quiz-actions .btn-pmos {
+  background: var(--pmos-primary); color: #fff; border: 0; border-radius: 4px;
+  padding: 12px 34px; font-weight: bold; letter-spacing: 1px; cursor: pointer; text-transform: uppercase;
+}
+.pmos-quiz-actions .btn-pmos:hover { background: var(--pmos-accent); }
+.pmos-quiz-reset {
+  background: none; border: 0; color: #888; text-decoration: underline; cursor: pointer; margin: 0 12px;
+}
+
+/* Result cards */
+.pmos-result { display: none; margin-top: 22px; border-radius: 12px; padding: 24px 26px; color: #fff; }
+.pmos-result.is-visible { display: block; }
+.pmos-result h4 { color: #fff; font-weight: bold; margin-bottom: 8px; font-size: 20px; }
+.pmos-result .pmos-score { font-size: 15px; opacity: .95; margin-bottom: 8px; }
+.pmos-result--low { background: var(--pmos-green); }
+.pmos-result--mid { background: var(--pmos-yellow); }
+.pmos-result--high { background: var(--pmos-red); }
+.pmos-result .btn-pmos-cta {
+  display: inline-block; margin-top: 14px; background: #fff; color: var(--pmos-primary-2);
+  padding: 11px 28px; border-radius: 4px; font-weight: bold; text-decoration: none; text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.pmos-result .btn-pmos-cta:hover { background: var(--pmos-ink); color: #fff; }
+.pmos-disclaimer { font-size: 13px; color: #777; margin-top: 16px; line-height: 1.6; }
+
+/* ---------- Multidisciplinary care cards -------------------------------- */
+.pmos-care { display: flex; flex-wrap: wrap; gap: 18px; margin: 20px 0; }
+.pmos-care .pmos-care-item {
+  flex: 1 1 200px; background: var(--pmos-soft); border-radius: 10px; padding: 20px 22px;
+  border-top: 3px solid var(--pmos-primary);
+}
+.pmos-care .pmos-care-item h5 { color: var(--pmos-primary); font-weight: bold; margin-bottom: 6px; }
