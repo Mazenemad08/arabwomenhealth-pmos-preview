@@ -32,6 +32,7 @@
 .pmos-tagline {
   max-width: 620px;
   margin: 12px auto 0;
+  text-align: center;
   color: #fff;
   font-size: 18px;
   line-height: 1.6;
