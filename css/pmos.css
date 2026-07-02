@@ -32,6 +32,7 @@
 .pmos-tagline {
   max-width: 620px;
   margin: 12px auto 0;
+  float: none; /* override RTL global "p { float:right }" so it centers */
   text-align: center;
   color: #fff;
   font-size: 18px;
