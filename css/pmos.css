@@ -18,6 +18,16 @@
   --pmos-soft: #f6f2f9;
 }
 
+/* Animated "PCOS -> Balance" banner logotype (replaces banner-txt.svg on EN home) */
+.pmos-banner-anim {
+  display: block;
+  width: 420px;
+  max-width: 88%;
+  height: auto;
+  margin: 0 auto;
+}
+@media (max-width: 767px) { .pmos-banner-anim { width: 300px; } }
+
 /* ---------- Banner tagline (below the SVG logotype) ---------------------- */
 .pmos-tagline {
   max-width: 620px;
